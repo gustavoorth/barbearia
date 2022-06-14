@@ -23,7 +23,7 @@ if($dados['senha'] == $dados['confirmpassword']){
             ':email' => $dados['email'],
             ':administrador' => isset($dados['administrador']) ? $dados['administrador'] : null
         ]);
-        header('location:..\frontend\login.php');
+        header('location:..\frontend\index.html');
         
         } else{
             // Por enquanto só morre, depois mostrar de forma mais amigável para o usuário

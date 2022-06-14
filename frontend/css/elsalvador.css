@@ -164,7 +164,7 @@ background-color: #EEE1C6;
 }
 
 .overlay.dark-overlay {
-  background: rgba(0,0,0, 0.75);
+  background-color: #fefef1;
 }
 
 .nav-tabs .nav-link {
@@ -323,6 +323,7 @@ background-color: #EEE1C6;
   ATENDIMENTO               
 -----------------------------------------*/
 .pricing {
+  text-align: center;
   position: relative;
 }
 
@@ -334,12 +335,14 @@ background-color: #EEE1C6;
 .pricing-plan {
   padding: 60px 40px 40px 40px;
   position: relative;
+  background-color: #fefefe;
 }
 
 .pricing-body {
-  margin-top: 60px;
-  margin-right: 50px;
-  margin-left: 95px;
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  background-color: white;
 }
 
 /*---------------------------------------
