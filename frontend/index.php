@@ -40,12 +40,13 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="carrinho.php">Carrinho</a>
+                <a class="nav-link" href="perfil.php">Perfil</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="perfil.php">Perfil</a>
+                <a class="nav-link" href="carrinho.php">Carrinho</a>
             </li>
+
             <li class="nav-item">
                 <p class="nav-separator">||||||||||||||||||||||||</p>
             </li>

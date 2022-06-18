@@ -25,27 +25,22 @@
           <table class="table">
             <thead>
               <tr>
-                <th scope="col" class="h5">Shopping Bag</th>
-                <th scope="col">Format</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Price</th>
+                <th scope="col" class="h5">Carrinho de compras</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Preço</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <th scope="row">
                   <div class="d-flex align-items-center">
-                    <img src="https://i.imgur.com/2DsA49b.webp" class="img-fluid rounded-3"
+                    <img src="https://http2.mlstatic.com/D_NQ_NP_604689-MLB41573808604_042020-O.jpg" class="img-fluid rounded-3"
                       style="width: 120px;" alt="Book">
                     <div class="flex-column ms-4">
-                      <p class="mb-2">Thinking, Fast and Slow</p>
-                      <p class="mb-0">Daniel Kahneman</p>
+                      <p class="mb-2">Pente</p>
                     </div>
                   </div>
                 </th>
-                <td class="align-middle">
-                  <p class="mb-0" style="font-weight: 500;">Digital</p>
-                </td>
                 <td class="align-middle">
                   <div class="d-flex flex-row">
                     <button class="btn btn-link px-2"
@@ -63,23 +58,19 @@
                   </div>
                 </td>
                 <td class="align-middle">
-                  <p class="mb-0" style="font-weight: 500;">$9.99</p>
+                  <p class="mb-0" style="font-weight: 500;">R$25</p>
                 </td>
               </tr>
               <tr>
                 <th scope="row" class="border-bottom-0">
                   <div class="d-flex align-items-center">
-                    <img src="https://i.imgur.com/Oj1iQUX.webp" class="img-fluid rounded-3"
+                    <img src="https://blog.beard.com.br/wp-content/uploads/2017/05/shampoo-barba-escura-6-800x800.jpg" class="img-fluid rounded-3"
                       style="width: 120px;" alt="Book">
                     <div class="flex-column ms-4">
-                      <p class="mb-2">Homo Deus: A Brief History of Tomorrow</p>
-                      <p class="mb-0">Yuval Noah Harari</p>
+                      <p class="mb-2">Shampoo</p>
                     </div>
                   </div>
                 </th>
-                <td class="align-middle border-bottom-0">
-                  <p class="mb-0" style="font-weight: 500;">Paperback</p>
-                </td>
                 <td class="align-middle border-bottom-0">
                   <div class="d-flex flex-row">
                     <button class="btn btn-link px-2"
@@ -97,7 +88,7 @@
                   </div>
                 </td>
                 <td class="align-middle border-bottom-0">
-                  <p class="mb-0" style="font-weight: 500;">$13.50</p>
+                  <p class="mb-0" style="font-weight: 500;">R$50</p>
                 </td>
               </tr>
             </tbody>
@@ -110,27 +101,16 @@
             <div class="row">
               <div class="col-md-6 col-lg-4 col-xl-3 mb-4 mb-md-0">
               <div class="col-lg-4 col-xl-3">
-                <div class="d-flex justify-content-between" style="font-weight: 500;">
-                  <p class="mb-2">Subtotal</p>
-                  <p class="mb-2">$23.49</p>
-                </div>
-
-                <div class="d-flex justify-content-between" style="font-weight: 500;">
-                  <p class="mb-0">Shipping</p>
-                  <p class="mb-0">$2.99</p>
-                </div>
 
                 <hr class="my-4">
 
                 <div class="d-flex justify-content-between mb-4" style="font-weight: 500;">
-                  <p class="mb-2">Total (tax included)</p>
-                  <p class="mb-2">$26.48</p>
+                  <p class="mb-2">Valor total: R$75</p>
                 </div>
 
                 <button type="button" class="btn btn-primary btn-block btn-lg">
                   <div class="d-flex justify-content-between">
-                    <span>Checkout</span>
-                    <span>$26.48</span>
+                    <span>Finalizar</span>
                   </div>
                 </button>
 
