@@ -198,6 +198,7 @@
                 </div>
                 <div class="overlay dark-overlay"></div>
             </section>
+            <?php include_once('footer.php'); ?>
         </main>
         <!-- JAVASCRIPT FILES -->
         <script src="js/jquery.min.js"></script>

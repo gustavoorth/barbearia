@@ -152,7 +152,7 @@
 				</div>
 		</div>
 </section>
-
+<?php include_once('navbar.php'); ?>
 
 
 
