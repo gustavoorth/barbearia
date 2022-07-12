@@ -14,8 +14,8 @@ INSERT INTO USUARIO VALUES (2, 'Roberta Guimarães', 'tauba', 'roberta_mineira@h
 
 CREATE TABLE IF NOT EXISTS PRODUTO (produto_id INT NOT NULL AUTO_INCREMENT,
                                     nome VARCHAR(100) NOT NULL,
-                                    preco VARCHAR(40) NOT NULL,
+                                    preco DECIMAL NOT NULL,
                                     imagem VARCHAR(500) NOT NULL,
                                     PRIMARY KEY (produto_id));
 
-INSERT INTO PRODUTO (nome, preco, imagem) VALUES ('Francisco Cleber', 'vrido', 'imagens/exemplo1');
+INSERT INTO produto (nome, preco, imagem) VALUES ('condicionador2', 'vrido', 'imagens/exemplo1');

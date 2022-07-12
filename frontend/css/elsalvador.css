@@ -402,7 +402,7 @@ a:hover {
 }
 
 .section-products #product-1 .part-1::before {
-    background: url("https://http2.mlstatic.com/D_NQ_NP_621991-MLB40907538604_022020-O.jpg") no-repeat center;
+    background: url("../images/produtos/tesoura.jpg") no-repeat center;
     background-size: cover;
 		transition: all 0.3s;
 }
