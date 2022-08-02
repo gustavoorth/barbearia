@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `dbtcc` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
-USE `dbtcc`;
+CREATE DATABASE  IF NOT EXISTS `barbearia_dev` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+USE `barbearia_dev`;
 -- MariaDB dump 10.17  Distrib 10.4.11-MariaDB, for Win64 (AMD64)
 --
 -- Host: 127.0.0.1    Database: dbtcc

@@ -159,7 +159,7 @@
 
 
 <?php
-
+include_once('footer.php');
 $conn = mysqli_connect("localhost","root","", "dbtcc");
 
 

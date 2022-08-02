@@ -15,8 +15,6 @@ class UsuBarbearia {
         // --
         $nomeBar = $data['nameBar'];
         // --
-        $cpf = $data['cpf'];
-        // --
         $email = $data['email'];
         $email = strtolower($email);
         // --
