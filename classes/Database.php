@@ -8,7 +8,7 @@ class Database
     private $host_db = "localhost";
     private $user_db = "root";
     private $pass_db = "";
-    private $name_db = "dbtcc";
+    private $name_db = "barbearia_dev";
 
     public $pdo;
 
