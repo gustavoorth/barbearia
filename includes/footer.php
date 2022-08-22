@@ -1,4 +1,6 @@
-<?php echo ('
+<?php
+
+echo '
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="bootstrap" viewBox="0 0 118 94">
     <title>Bootstrap</title>
@@ -31,12 +33,10 @@
   </footer>
 </div>
 
-<script src="js/jquery.min.js"></script>
-<script src="js/popper.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.backstretch.min.js"></script>
+<script src="/elsalvador/js/jquery.min.js"></script>
+<script src="/elsalvador/js/popper.js"></script>
+<script src="/elsalvador/js/bootstrap.min.js"></script>
+<script src="/elsalvador/js/jquery.backstretch.min.js"></script>
     
-  </body>
-</html>
-')
+';
 ?>

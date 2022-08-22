@@ -20,8 +20,8 @@
 
     // BACKSTRETCH SLIDESHOW
     $('#section_1').backstretch([
-      "images/slide/inicial.jpg", 
-      "images/slide/segunda.jpg"
+      "/elsalvador/images/slide/inicial.jpg", 
+      "/elsalvador/images/slide/segunda.jpg"
     ],  {duration: 3000, fade: 750});
     
   })(window.jQuery);

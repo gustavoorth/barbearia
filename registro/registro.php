@@ -1,21 +1,12 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <meta name="description" content="">
-        <meta name="author" content="">
-
-        <title>BARBEARIA EL SALVADOR</title>
-                
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/elsalvador.css" rel="stylesheet">
-        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+      
+    <?php include_once('../includes/head.php');?>
     </head>
     
     <body>
-    <?php include_once('navbar.php'); ?>
+    <?php include_once('../includes/navbar.php'); ?>
 
 <section class="registro sb-bg-black sb-content">
     <div class="container">
@@ -28,7 +19,7 @@
                         </h4>
 
                         <form class="pt-3" id="form_registro" method="post">
-                            <!-- campo de nome -->
+ 
                             <div class="form-group icone_dentro_input">
                                 <input 
                                     type="text" 
@@ -41,7 +32,6 @@
                                 </ion-icon>
                             </div>
 
-                            <!-- campo de telefone -->
                             <div class="form-group icone_dentro_input">
                                 <input 
                                     type="text" 
@@ -54,7 +44,6 @@
                                 </ion-icon>
                             </div>
 
-                            <!-- campo de email -->
                             <div class="form-group icone_dentro_input">
                                 <input 
                                     type="text" 
@@ -67,7 +56,6 @@
                                 </ion-icon>
                             </div>
 
-                            <!-- campo de senha -->
                             <div class="form-group icone_dentro_input">
                                 <input 
                                     type="password" 
@@ -79,9 +67,7 @@
                                 <ion-icon name="lock-closed-outline" id="icone_senha"></ion-icon>
                             </div>
 
-                            <!-- Confirmar de senha -->
                             <div class="form-group icone_dentro_input">
-                                <!-- O atributo onkeyup juntamente com a expressão regular impede que o espaços sejam digitados neste campo -->
                                 <input 
                                     type="password" 
                                     class="form-control sb-form-input" 
@@ -102,8 +88,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-7 col-sm-12 align-self-center" id="banner-registro">
-                <img src="./assets/images/back-registro.jpg" alt="registro" id="img-registro">
+            <div class="col-md-6 col-sm-12 align-self-center" id="banner-registro">
+                <img src="/elsalvador/assets/images/back-registro.jpg" alt="registro" id="img-registro">
             </div>
         </div>
     </div>
@@ -111,26 +97,26 @@
 
 
 <?php
-include_once('footer.php');
+include_once('../includes/footer.php');
 $conn = mysqli_connect("localhost","root","", "barbearia_dev");
 
 
 if(isset($_POST['cadastrar'])){
     $nome = mysqli_real_escape_string($conn, $_POST['nome']);
-    $telefone = mysqli_real_escape_string($conn, $_POST['telefone']); //mysqli_real_escape_string($conn, $_POST['nome']) evitar sql injection
+    $telefone = mysqli_real_escape_string($conn, $_POST['telefone']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $email = strtolower($email); // DEIXA TDS OS CARACTERES MINUSCULO, POIS SE DEIXAR NORMAL VEI PODER TER "TESTE@EMAIL.COM" E "teste@email.com"
-    $senha = md5(mysqli_real_escape_string($conn, $_POST['senha']));
+    $email = strtolower($email);
+    $senha = mysqli_real_escape_string($conn, $_POST['senha']);
     
     $queryEmail = "select email from user where email = '{$email}'";
     $resultEmail = mysqli_query($conn, $queryEmail);
     $rowEmail = mysqli_num_rows($resultEmail);
-    //
+
     $queryTel = "select telefone from user where telefone = '{$telefone}'";
     $resultTel = mysqli_query($conn, $queryTel);
     $rowTel = mysqli_num_rows($resultTel);
 
-    if ($rowTel ==1) {
+    if ($rowTel == 1 || $rowEmail == 1) {
         require_once "conteudo/registro/alert.php";
     }else{
         $insert = "INSERT INTO user (nome, telefone ,email, senha) VALUES ('$nome','$telefone', '$email', '$senha') ";
@@ -145,7 +131,7 @@ if(isset($_POST['cadastrar'])){
           title: 'Parabéns',
           text: 'Seu cadastro foi realizado com sucesso!'
         }).then(function() {
-            window.location = 'login.php';
+            window.location = '../login/login.php';
         });
         
         </script>";
@@ -154,3 +140,5 @@ if(isset($_POST['cadastrar'])){
 
 
 ?>
+    </body>
+</html>

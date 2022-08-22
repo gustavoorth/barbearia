@@ -1,69 +1,18 @@
 <!doctype html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <?php include_once('includes/head.php');         
 
-        <meta name="description" content="">
-        <meta name="author" content="">
-
-        <title>BARBEARIA EL SALVADOR</title>
-                
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/elsalvador.css" rel="stylesheet">
-        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    session_start(); 
+    $_SESSION['url'] = $_SERVER['REQUEST_URI'];
+        ?>
     </head>
     
     <body>
-    <nav class="navbar fixed-top navbar-expand-lg">
-<div class="container">
 
-    <a href="index.php" class="navbar-brand">
-        EL SALVADOR
-    </a>
+    <?php include_once('includes/navbar.php')?>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-lg-5">
-        <li class="nav-item">
-                <p class="nav-separator">||||||||||||||</p>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="agendar.php">Agendar</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="produtos.php">Produtos</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="perfil.php">Perfil</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="carrinho.php">Carrinho</a>
-            </li>
-
-            <li class="nav-item">
-                <p class="nav-separator">||||||||||||||||||||||||</p>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="registration.php">Registro</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="login.php">Login</a>
-            </li>
-        </ul>
-
-    </div>
-</div>
-</nav>
-       
         <main>
 
             <section class="hero d-flex justify-content-center align-items-center" id="section_1">
@@ -108,7 +57,7 @@
                                 <div class="tab-pane fade show active" id="nav-intro" role="tabpanel" aria-labelledby="nav-intro-tab">
                                     <div class="row">
                                         <div class="col-lg-6 col-12 mb-lg-0 mb-4">
-                                            <img src="images/frente-barbearia.jpg" class="img-fluid" alt="">
+                                            <img src="/elsalvador/images/frente-barbearia.jpg" class="img-fluid" alt="">
                                         </div>
 
                                         <div class="col-lg-5 col-12 m-auto">
@@ -138,7 +87,7 @@
                                         </div>
 
                                         <div class="col-lg-6 col-12 mt-lg-0 mt-4">
-                                            <img src="images/barbeiros.jpg" class="img-fluid" alt="">
+                                            <img src="/elsalvador/images/barbeiros.jpg" class="img-fluid" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -198,8 +147,8 @@
                 </div>
                 <div class="overlay dark-overlay"></div>
             </section>
-            <?php include_once('footer.php'); ?>
+            <?php include_once('includes/footer.php'); ?>
+            <script src="/elsalvador/js/custom.js"></script>
         </main>
-        <script src="js/custom.js"></script>
     </body>
 </html>
