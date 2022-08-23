@@ -37,6 +37,6 @@ echo '
 <script src="/elsalvador/js/popper.js"></script>
 <script src="/elsalvador/js/bootstrap.min.js"></script>
 <script src="/elsalvador/js/jquery.backstretch.min.js"></script>
-    
+<script src="/elsalvador/js/area_cliente.js"></script>
 ';
 ?>

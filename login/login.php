@@ -12,15 +12,6 @@
 
   </head>
   <body>
-  <?php 
-      if (isset($_SESSION['sucess'])) {
-        
-        
-        require_once "./conteudo/registro/sucesso_barber.php";
-        unset($_SESSION['sucess']);
-     }
-    ?>
-
     <div id="root">
     <?php
 
@@ -30,7 +21,10 @@ $conn = mysqli_connect("localhost","root","", "barbearia_dev");
 if(isset($_POST['entrar'])){
     
     if(empty($_POST['email']) || empty($_POST['senha'])){
-        echo "<script>
+        echo "
+        
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@9'></script>
+        <script>
 
                 Swal.fire({
                 icon: 'error',
@@ -39,7 +33,6 @@ if(isset($_POST['entrar'])){
                 })
 
                 </script>";
-        exit();
     }else{
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $senha = mysqli_real_escape_string($conn, $_POST['senha']);

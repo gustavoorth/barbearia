@@ -25,7 +25,9 @@ if ($page == 'index.php'){
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/elsalvador/perfil.php">Perfil</a>
+                <a class="nav-link" data-toggle="modal"
+                data-target="#modal-perfil"
+                href="#">Perfil</a>
             </li>
 
             <li class="nav-item nav-separador">

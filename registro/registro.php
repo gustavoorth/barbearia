@@ -117,7 +117,15 @@ if(isset($_POST['cadastrar'])){
     $rowTel = mysqli_num_rows($resultTel);
 
     if ($rowTel == 1 || $rowEmail == 1) {
-        require_once "conteudo/registro/alert.php";
+        echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@9'></script>
+
+<script>
+Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: 'Telefone ou email já cadastrados!'
+})
+</script>";
     }else{
         $insert = "INSERT INTO user (nome, telefone ,email, senha) VALUES ('$nome','$telefone', '$email', '$senha') ";
 
