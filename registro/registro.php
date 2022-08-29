@@ -73,6 +73,7 @@
                                     class="form-control sb-form-input" 
                                     id="registro_confirmar_senha" 
                                     placeholder="Confirme sua senha"
+                                    name="confirmarsenha"
                                 >
                                 <ion-icon name="lock-closed-outline" id="icone_senha"></ion-icon>
                             </div>
@@ -102,6 +103,31 @@ $conn = mysqli_connect("localhost","root","", "barbearia_dev");
 
 
 if(isset($_POST['cadastrar'])){
+
+    if(empty($_POST['email']) || empty($_POST['senha']) || empty($_POST['nome']) || empty($_POST['telefone']) || empty($_POST['senha']) ){
+        echo "
+        <script>
+
+                Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Preencha todos os campos antes de prosseguir.'
+                })
+
+                </script>";
+    }elseif ($_POST['senha'] != $_POST['confirmarsenha']) {
+        echo " <script>
+
+                Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'As senhas não coincidem!'
+                })
+
+                </script>";
+    }else{
+
+
     $nome = mysqli_real_escape_string($conn, $_POST['nome']);
     $telefone = mysqli_real_escape_string($conn, $_POST['telefone']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
@@ -117,8 +143,7 @@ if(isset($_POST['cadastrar'])){
     $rowTel = mysqli_num_rows($resultTel);
 
     if ($rowTel == 1 || $rowEmail == 1) {
-        echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@9'></script>
-
+        echo "
 <script>
 Swal.fire({
   icon: 'error',
@@ -130,7 +155,7 @@ Swal.fire({
         $insert = "INSERT INTO user (nome, telefone ,email, senha) VALUES ('$nome','$telefone', '$email', '$senha') ";
 
         $run_insert = mysqli_query($conn, $insert);
-        echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@9'></script>
+        echo "
 
         <script>
         
@@ -145,7 +170,7 @@ Swal.fire({
         </script>";
     }
 }
-
+}
 
 ?>
     </body>

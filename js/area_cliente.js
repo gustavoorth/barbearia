@@ -10,20 +10,16 @@
     const campoNome = document.querySelector("#modal-perfil #input-nome");
     const campoTelefone = document.querySelector("#modal-perfil #input-telefone");
     
-    // estado inicial
-    btnSalvar.classList.add("sb-d-none");
     
     btnEditar.addEventListener("click", () => {
-        btnSalvar.classList.remove("sb-d-none");
+        btnSalvar.classList.remove("d-none");
 
         campoNome.removeAttribute("readonly");
-        campoNome.classList.add("sb-cursor-text");
+        campoNome.classList.add("cursor-text");
 
         campoTelefone.removeAttribute("readonly");
-        campoTelefone.classList.add("sb-cursor-text");
+        campoTelefone.classList.add("cursor-text");
 
-        campoDataNascimento.removeAttribute("readonly");
-        campoDataNascimento.classList.add("sb-cursor-text");
     });
 
     btnSalvar.addEventListener("click", (e) => {
@@ -41,8 +37,8 @@
             text: "Você deseja salvar as alterações realizadas",
             icon: 'warning',
             showCancelButton: true,
-            confirmButtonText: 'Sim, salvar tudo!',
-            cancelButtonText: 'Não, cancele!',
+            confirmButtonText: 'Salvar',
+            cancelButtonText: 'Cancelar',
             reverseButtons: true
         }).then((result) => {
             if (result.isConfirmed) {

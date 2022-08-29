@@ -811,8 +811,12 @@ a:hover {
   font-size: 20px;
 }
 
-#modal-perfil .modal-content input{
+.cursor-na{
   cursor: not-allowed;
+}
+
+.cursor-text{
+  cursor: text;
 }
 
 .btn-salvar{

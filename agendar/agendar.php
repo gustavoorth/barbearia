@@ -2,7 +2,7 @@
 <html>
     <head>
     
-    <?php include_once('includes/head.php');
+    <?php include_once('../includes/head.php');
     session_start(); 
     $_SESSION['url'] = $_SERVER['REQUEST_URI'];
         ?>
@@ -10,11 +10,10 @@
     </head>
     
     <body>
-    <?php include_once('navbar.php'); ?>
+    <?php include_once('../includesnavbar.php'); ?>
     <body>
     <?php  
-        include('verifica_login.php');
-        include "config/config.php";
+        include "../config/config.php";
         date_default_timezone_set('America/Sao_Paulo');
 
         $idUsuario = $_SESSION["user_id"];
@@ -92,6 +91,6 @@
 
     ?>
 </body>
-    <?php include_once('footer.php'); ?>
+    <?php include_once('../footer.php'); ?>
 </body>
 </html>

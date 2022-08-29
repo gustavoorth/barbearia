@@ -22,8 +22,6 @@ if(isset($_POST['entrar'])){
     
     if(empty($_POST['email']) || empty($_POST['senha'])){
         echo "
-        
-        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@9'></script>
         <script>
 
                 Swal.fire({
@@ -46,17 +44,21 @@ if(isset($_POST['entrar'])){
 
         if($row == 1){
             $_SESSION = $dadosUsuario;
-            $url = '';
-            if(isset($_SESSION['url'])){
-                $url = $_SESSION['url'];
-                 }else{ 
-                $url = "index.php"; 
-                 }
-                 header("Location: ../$url"); 
-                 exit();
+                 echo "
+
+        <script>
+        
+        Swal.fire({
+          icon: 'success',
+          title: 'Parabéns',
+          text: 'Seu cadastro foi realizado com sucesso!'
+        }).then(function() {
+            window.location = '../index.php';
+        });
+        
+        </script>";
         }else{
              echo "
-             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@9'></script>
              <script>
 
              Swal.fire({
@@ -137,8 +139,5 @@ include_once('../includes/navbar.php');
 </section>
 <?php include_once('../includes/footer.php');?>
     </div>
-
-    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
   </body>
 </html>

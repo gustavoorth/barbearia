@@ -11,8 +11,9 @@
     
     <body>
 
-    <?php include_once('includes/navbar.php')?>
-
+    <?php include_once('includes/navbar.php');    
+    ?>
+    
         <main>
 
             <section class="hero d-flex justify-content-center align-items-center" id="section_1">
@@ -67,7 +68,7 @@
 
                                             <p>A barbearia encontra se no endereço: Rua euclides, n.º 621, Salvador do Sul.</p>
                                             
-                                            <p>Todas as imagens utilizadas no site são ilustrativas, os créditos são da <a rel="nofollow" href="https://freepik.com/" target="_blank">FreePik.com</a> Obrigado por disponibilizar essas imagens de graça.</p>
+                                            <p>Todas as imagens utilizadas no site são ilustrativas, os créditos são da <a rel="nofollow" href="https://freepik.com/" target="_blank">FreePik.com.</a> Obrigado por disponibilizar essas imagens de graça.</p>
                                         </div>
                                     </div>
                                 </div>
