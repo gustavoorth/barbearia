@@ -13,13 +13,13 @@
     <?php include_once('../includesnavbar.php'); ?>
     <body>
     <?php  
-        include "../config/config.php";
+        $conn = mysqli_connect("localhost","root","", "barbearia_dev");
         date_default_timezone_set('America/Sao_Paulo');
 
         $idUsuario = $_SESSION["user_id"];
         $idBarbearia = $_GET["id"];
-        $data_agendamento = mysqli_real_escape_string($mysqli, $_POST['dia-agendamento']);
-        $horario_agendamento = mysqli_real_escape_string($mysqli, $_POST['horario-agendamento']); 
+        $data_agendamento = mysqli_real_escape_string($conn, $_POST['dia-agendamento']);
+        $horario_agendamento = mysqli_real_escape_string($conn, $_POST['horario-agendamento']); 
         $pesquisaServico = "servico";
         $servicos = [];
         $valorTotal = 0;
@@ -44,7 +44,7 @@
         }
 
         $queryNumAgendamentos = "select * from agendamento where data_agendamento = '{$data_agendamento}' and horario_agendamento = '{$horario_agendamento}' and barbearia = '{$idBarbearia}' and status = 'P'";
-        $resultNumAgendamentos = $mysqli->query($queryNumAgendamentos);
+        $resultNumAgendamentos = $conn->query($queryNumAgendamentos);
         $numeroAgendamentos = $resultNumAgendamentos->num_rows;
         
         // Barrar marcação de serviços no mesmo dia com um horário que já passou
@@ -91,6 +91,6 @@
 
     ?>
 </body>
-    <?php include_once('../footer.php'); ?>
+    <?php include_once('../includes/footer.php'); ?>
 </body>
 </html>
