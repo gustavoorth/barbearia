@@ -51,7 +51,7 @@ if(isset($_POST['entrar'])){
         Swal.fire({
           icon: 'success',
           title: 'Parabéns',
-          text: 'Seu cadastro foi realizado com sucesso!'
+          text: 'Seu login foi realizado com sucesso!'
         }).then(function() {
             window.location = '../index.php';
         });

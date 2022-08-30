@@ -11,7 +11,7 @@
 
         if(empty($_POST['nome']) || empty($_POST['telefone'])){
             
-            echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@9'></script>
+            echo "
 
             <script>
             Swal.fire({
@@ -25,11 +25,16 @@
 
         } else{
         
+          $conn1 = mysqli_connect("localhost", "root", "", "barbearia_dev");
+
+            $queryUsuarioLogado = "CALL PROC_SEL_USUARIO({$_SESSION['user_id']})";
+            $resultUsuarioLogado = mysqli_query($conn1, $queryUsuarioLogado);
+            $dadosUsuarioLogado = mysqli_fetch_assoc($resultUsuarioLogado);
             $queryTel = "select telefone from user where telefone = '{$telefone}'";
             $resultTel = mysqli_query($conn, $queryTel);
             $rowTel = mysqli_num_rows($resultTel);
         
-            if ($rowTel == 1) {
+            if ($rowTel == 1 and $dadosUsuarioLogado['telefone'] != $_POST['telefone']) {
                 echo "
         <script>
         Swal.fire({
@@ -48,8 +53,8 @@
         $resultUsuario = $conn->affected_rows;
             
         if ($resultUsuario > 0) {
-            echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@9'></script>
-            
+            echo "
+
             <script>
     Swal.fire({
         icon: 'success',
@@ -64,7 +69,7 @@
             ";
         }
         else{
-            echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@9'></script>
+            echo "
 
             <script>
             Swal.fire({
