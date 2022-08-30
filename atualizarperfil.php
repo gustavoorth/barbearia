@@ -34,6 +34,22 @@
             $resultTel = mysqli_query($conn, $queryTel);
             $rowTel = mysqli_num_rows($resultTel);
         
+            if ($dadosUsuarioLogado['telefone'] == $_POST['telefone'] and $dadosUsuarioLogado['nome'] == $_POST['nome']){
+
+              echo "<script>
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Modifique ao menos algum item!'
+              }).then(function() {
+                  window.location = 'index.php';
+              });
+              </script>";
+
+            } else {
+              
+            
+
             if ($rowTel == 1 and $dadosUsuarioLogado['telefone'] != $_POST['telefone']) {
                 echo "
         <script>
@@ -53,7 +69,8 @@
         $resultUsuario = $conn->affected_rows;
             
         if ($resultUsuario > 0) {
-            echo "
+          $_SESSION['nome'] == $nome;  
+          echo "
 
             <script>
     Swal.fire({
@@ -83,5 +100,6 @@
         }
     }
     }
+  }
     ?>
 </body>

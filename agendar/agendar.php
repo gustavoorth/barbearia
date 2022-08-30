@@ -49,12 +49,26 @@
         
         // Barrar marcação de serviços no mesmo dia com um horário que já passou
         if($dataAtual == $horario_agendamentoConv && $horaAtual > $horario_agendamento){
-            include "conteudo/barbearia/msg/erro.php";   
+            echo "<script>
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'O horário selecionado não está mais disponível'
+    })
+</script>";   
         }
         else{
             // Horário não mais disponvível
             if($numeroAgendamentos > 0){
-                include "conteudo/barbearia/msg/erro.php";
+                echo "<script>
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'O horário selecionado não está mais disponível'
+    }).then(function() {
+        history.go(-1);
+    })
+</script>";
             }
             else{
                 $queryQtdAgendamentos = "select count(*) as 'quantidade' from agendamento where usuario = '{$idUsuario}' and status = 'P' and barbearia = '{$idBarbearia}'";

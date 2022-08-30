@@ -20,7 +20,7 @@ if ($page == 'index.php'){
         <ul class="navbar-nav ms-lg-5">
 
             <li class="nav-item">
-                <a class="nav-link" href="/elsalvador/agendar/agendar.php">Agendar</a>
+                <a class="nav-link" href="/elsalvador/agendar/agendar.php?id=8">Agendar</a>
             </li>
 
             <li class="nav-item">
@@ -43,15 +43,19 @@ if ($page == 'index.php'){
             <li class="nav-item nav-separador">
                 <a class="nav-link" href="/elsalvador/carrinho.php">Carrinho</a>
             </li>';
-            if(isset($_SESSION['user_id'])){echo '
-
+            if(isset($_SESSION['user_id'])){
+                $conn1 = mysqli_connect("localhost", "root", "", "barbearia_dev");
+                $queryUsuarioLogado = "CALL PROC_SEL_USUARIO({$_SESSION['user_id']})";
+                $resultUsuarioLogado = mysqli_query($conn1, $queryUsuarioLogado);
+                $dadosUsuarioLogado = mysqli_fetch_assoc($resultUsuarioLogado);
+                echo '
                 <li class="nav-item">
                 <a class="nav-link" href="/elsalvador/login/logout.php">Deslogar</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="modal"
                 data-bs-target="#modal-perfil"
-                href="#"">Conectado</a>
+                href="#"">',ucwords($dadosUsuarioLogado['nome']),'</a>
             </li>
         </ul>
 
@@ -82,7 +86,7 @@ echo '<div class="modal fade" id="modal-perfil" tabindex="-1" role="dialog" aria
             <h5 class="modal-title sb-txt-secondary sb-w-700">
                 Perfil
             </h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Fechar">
                 <span aria-hidden="true" class="sb-txt-white">
                     &times;
                 </span>
@@ -142,7 +146,7 @@ echo '<div class="modal fade" id="modal-perfil" tabindex="-1" role="dialog" aria
         </form>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-secondary sb-w-700" data-dismiss="modal">
+        <button type="button" class="btn btn-secondary sb-w-700" data-bs-dismiss="modal">
             Fechar
         </button>
         <button 
