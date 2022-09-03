@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `agendamento`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `agendamento` (
- `id_agendamento` int(11) NOT NULL,
+ `id_agendamento` int(11) NOT NULL AUTO_INCREMENT,
   `usuario` int(11) NOT NULL,
   `barbearia` int(11) NOT NULL,
   `data_agendamento` date NOT NULL,
@@ -270,7 +270,7 @@ DELIMITER ;
 /*!50003 SET sql_mode              = 'NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `PROC_INS_AGENDAMENTO`(
-	IN id_usuario INT,
+    IN id_usuario INT,
     IN id_barbearia INT,
     IN data_agendamento_escolhida DATE,
     IN horario_agendamento_escolhido TIME,
@@ -278,14 +278,14 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `PROC_INS_AGENDAMENTO`(
 )
 BEGIN
 	INSERT INTO agendamento (
-		usuario,
+        usuario,
         barbearia,
         data_agendamento,
         horario_agendamento,
         valor_total,
         status
     ) VALUES (
-		id_usuario,
+        id_usuario,
         id_barbearia,
         data_agendamento_escolhida,
         horario_agendamento_escolhido,
@@ -616,14 +616,12 @@ DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `PROC_UP_USER`(
 	IN usuario INT,
 	IN nome_atualizado VARCHAR(45),
-    IN telefone_atualizado VARCHAR(45),
-    IN data_de_nascimento_atualizado DATE
+    IN telefone_atualizado VARCHAR(45)
 )
 BEGIN
 	UPDATE user
     SET nome = nome_atualizado, 
-		telefone = telefone_atualizado,
-        data_de_nascimento = data_de_nascimento_atualizado
+		telefone = telefone_atualizado
     WHERE user.user_id = usuario;
 END ;;
 DELIMITER ;

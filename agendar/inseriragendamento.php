@@ -1,25 +1,14 @@
-<!doctype html>
-<html>
-    <head>
-    
-
-    
-    <?php include_once('../includes/head.php');
-    session_start(); 
-    $_SESSION['url'] = $_SERVER['REQUEST_URI'];
-        ?>
-    
-    </head>
-    
     <body>
-    <?php include_once('../includesnavbar.php'); ?>
-    <body>
-    <?php  
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <?php
+        include_once('../includes/head.php');
+        include "../functions.php";
+        session_start(); 
         $conn = mysqli_connect("localhost","root","", "barbearia_dev");
         date_default_timezone_set('America/Sao_Paulo');
 
         $idUsuario = $_SESSION["user_id"];
-        $idBarbearia = $_GET["id"];
+        $idBarbearia = 8;
         $data_agendamento = mysqli_real_escape_string($conn, $_POST['dia-agendamento']);
         $horario_agendamento = mysqli_real_escape_string($conn, $_POST['horario-agendamento']); 
         $pesquisaServico = "servico";
@@ -40,7 +29,7 @@
         // fazer a soma do valor total dos serviços
         foreach ($servicos as $value){
             $queryServico = "select preco from servico where id_servico = '{$value}' and barbearia = '{$idBarbearia}'";
-            $resultServico = $mysqli->query($queryServico);
+            $resultServico = $conn->query($queryServico);
             $servico = $resultServico->fetch_array();
             $valorTotal += $servico["preco"];
         }
@@ -74,43 +63,53 @@
             }
             else{
                 $queryQtdAgendamentos = "select count(*) as 'quantidade' from agendamento where usuario = '{$idUsuario}' and status = 'P' and barbearia = '{$idBarbearia}'";
-                $resultQtdAgendamentos = $mysqli->query($queryQtdAgendamentos);
+                $resultQtdAgendamentos = $conn->query($queryQtdAgendamentos);
                 $rowQtdAgendamentos = $resultQtdAgendamentos->fetch_assoc();
                 $QtdAgendamentos = $rowQtdAgendamentos["quantidade"];
 
                 // Número de agendamento excedidos
                 if($QtdAgendamentos > 0){
-                    include "conteudo/barbearia/msg/erro_qtd_agendamentos.php";
+                    echo "<script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Você não pode agendar mais de um serviço'
+                    }).then(function() {
+                        history.go(-1);
+                    })
+                </script>";
                 }
                 else{
                     // FAZ O AGENDAMENTO
                     $queryAgendamento = "CALL PROC_INS_AGENDAMENTO('{$idUsuario}', '{$idBarbearia}', '{$data_agendamento}', '{$horario_agendamento}', '{$valorTotal}')";
-                    $resultAgendamento = $mysqli->query($queryAgendamento);
+                    $resultAgendamento = $conn->query($queryAgendamento);
                     
                     $queryBuscarIdAgendamento = "select id_agendamento from agendamento where data_agendamento = '{$data_agendamento}' and horario_agendamento = '{$horario_agendamento}' and status = 'P'";
-                    $resultIdAgendamento = $mysqli->query($queryBuscarIdAgendamento);
+                    $resultIdAgendamento = $conn->query($queryBuscarIdAgendamento);
                     $rowAgendamento = $resultIdAgendamento->fetch_assoc();
                     $idAgendamento = $rowAgendamento["id_agendamento"];
 
                     foreach ($servicos as $value){
                         $queryAgendamentoServico = "CALL PROC_INS_AGENDAMENTO_SERVICO('{$idAgendamento}', '{$value}')";
-                        $resultAgendamentoServico = $mysqli->query($queryAgendamentoServico);    
+                        $resultAgendamentoServico = $conn->query($queryAgendamentoServico);    
                     }
 
                     // Serviço marcado
-                    if($mysqli->affected_rows > 0){
-                        include "conteudo/barbearia/msg/sucesso.php";
+                    if($conn->affected_rows > 0){
+                        echo "<script>
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Parabéns',
+                            text: 'Serviço marcado com sucesso. No seu perfil, você pode conferir as informações.'
+                        }).then(function() {
+                            window.location = '/elsalvador/index.php';
+                        });
+                    </script>";
                     }
                 }
             }
         }
 
-    ?>
-
-
-
-    <?php include_once('../includes/footer.php');
-     include "../functions.php";
     ?>
 </body>
 </html>

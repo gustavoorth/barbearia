@@ -124,7 +124,7 @@
                                                 <div class='row'>
                                                     <div class='col-12 col-lg-8 ml-auto mr-auto mb-4'>
                                                         <div class='multisteps-form__progress'>
-                                                            <button class='multisteps-form__progress-btn js-active' type='button' title='User Info' disabled>
+                                                            <button class='multisteps-form__progress-btn js-active' type='button' title='User Info'>
                                                                 Dia
                                                             </button>
                     
@@ -146,7 +146,7 @@
                                                 <!--form panels-->
                                                 <div class='row'>
                                                     <div class='col-12 col-lg-8 m-auto'>
-                                                        <form class='multisteps-form__form' method='post' action='agendar_servico.php?id={$idBarbearia}'>
+                                                        <form class='multisteps-form__form' method='post' action='inseriragendamento.php'>
                                                             <!--Dia-->
                                                             <div class='multisteps-form__panel shadow p-4 rounded js-active'>
                                                                 <h3 class='multisteps-form__title sb-txt-white sb-w-900'>
@@ -337,8 +337,8 @@
     <script src="../assets/datepicker/legacy.js"></script>
     <script src="../assets/datepicker/translate/pt_BR.js"></script>
 
-    <script src="../js/barbearia/barbearia_form.js"></script>
-    <script src="../js/barbearia/barbearia_steps.js"></script>
+    <script src="../js/barbearia_form.js"></script>
+    <script src="../js/barbearia_steps.js"></script>
 
     <?php 
         $abertura = str_replace("-", "", $abertura);
