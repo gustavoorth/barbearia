@@ -73,7 +73,7 @@ if(isset($_POST['entrar'])){
     }
 include_once('../includes/navbar.php');
 ?>
-<section class="login sb-bg-black sb-content">
+<section class="login sb-bg-custom sb-content">
     <div class="container">
         <div class="row">
         <div class="col-md-6 col-sm-12 align-self-center" id="banner-login">

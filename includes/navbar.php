@@ -20,7 +20,7 @@ if ($page == 'index.php'){
         <ul class="navbar-nav ms-lg-5">
 
             <li class="nav-item">
-                <a class="nav-link" href="/elsalvador/agendar/agendar.php?id=8">Agendar</a>
+                <a class="nav-link" href="/elsalvador/agendar/agendar.php">Agendar</a>
             </li>
 
             <li class="nav-item">

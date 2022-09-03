@@ -8,7 +8,7 @@
     <body>
     <?php include_once('../includes/navbar.php'); ?>
 
-<section class="registro sb-bg-black sb-content">
+<section class="registro sb-bg-custom sb-content">
     <div class="container">
         <div class="row">
             <div class="col-md-5 col-sm-12 align-self-center mt-4 mb-4">
