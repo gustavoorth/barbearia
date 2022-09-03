@@ -135,7 +135,7 @@ DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `user` (
-  `user_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(45) NOT NULL,
   `telefone` varchar(45) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -151,7 +151,7 @@ CREATE TABLE `user` (
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` (`user_id`, `nome`, `telefone`, `email`, `senha`) VALUES
-(1, 'gustavo', '(51) 99532-6200', 'gustavogauerorth@gmail.com', '123456789');
+(0, 'gustavo', '(51) 99532-6200', 'gustavogauerorth@gmail.com', '123456789');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 

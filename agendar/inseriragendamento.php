@@ -45,6 +45,8 @@
         icon: 'error',
         title: 'Oops...',
         text: 'O horário selecionado não está mais disponível'
+    }).then(function() {
+        history.go(-1);
     })
 </script>";   
         }

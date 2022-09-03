@@ -1210,7 +1210,7 @@ color:var(--secondary);
 
 /* Descolar do menu fixo no topo*/
 .gap-to-menu{
-  margin-top: max(130px, 8vh);
+  margin-top: max(100px, 8vh);
 }
 
 /* Margin */
