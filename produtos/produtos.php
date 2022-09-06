@@ -6,6 +6,9 @@
 	<?php include_once('../includes/head.php');
 	session_start(); 
     $_SESSION['url'] == $_SERVER['REQUEST_URI'];
+	?>
+	</head>
+	<body> <?php
 	$con = mysqli_connect("localhost","root","","barbearia_dev");
 		if (mysqli_connect_errno()){
 			echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -32,21 +35,21 @@
 	
 	if(empty($_SESSION["shopping_cart"])) {
 		$_SESSION["shopping_cart"] = $cartArray;
-		echo "Swal.fire({
+		print "<script>Swal.fire({
 			icon: 'success',
 			title: 'Parabéns',
 			text: 'Produto adicionado no carrinho!'
-		  })";
+		  }) </script>" ; 
 	}else{
 		$array_keys = array_keys($_SESSION["shopping_cart"]);
 		if(in_array($code,$array_keys)) {
 			echo "<script>
 
 			Swal.fire({
-			icon: 'error',
-			title: 'Oops...',
-			text: 'Produto já está no carrinho.'
-			})
+				icon: 'error',
+				title: 'Oops...',
+				text: 'Produto já está no carrinho.'
+			  })
 
 			</script>";	
 		} else {
@@ -55,7 +58,7 @@
         
         Swal.fire({
           icon: 'success',
-          title: 'Parabéns',
+          title: 'Sucesso',
           text: 'Produto adicionado no carrinho!'
         })
         
@@ -64,12 +67,7 @@
 	
 		}
 	}
-	?>
-	
-    </head>
-    
-    <body>
-    <?php include_once('../includes/navbar.php'); ?>
+	include_once('../includes/navbar.php'); ?>
 
     <section class="section-products sb-bg-custom">
 	<picture class="image" alt="Imagem sessao 1">

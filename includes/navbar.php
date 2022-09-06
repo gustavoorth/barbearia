@@ -17,12 +17,20 @@ if ($page == 'index.php'){
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-lg-5">
+        <ul class="navbar-nav ms-lg-5">;';
+        if(isset($_SESSION['user_id'])){
+        echo '
 
-            <li class="nav-item">
-                <a class="nav-link" href="/elsalvador/agendar/agendar.php">Agendar</a>
+        <li class="nav-item">
+        <a class="nav-link" href="/elsalvador/agendar/agendar.php">Agendar</a>
+    </li>'; } else {
+                echo '
+                <li class="nav-item">
+                <a class="nav-link" href="/elsalvador/login/login.php">Agendar</a>
             </li>
-
+            ';
+            }
+            echo '
             <li class="nav-item">
                 <a class="nav-link" href="/elsalvador/produtos/produtos.php">Produtos</a>
             </li>

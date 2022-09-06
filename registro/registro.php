@@ -28,7 +28,7 @@
                                     placeholder="Seu nome"
                                     name="nome"
                                 >
-                                <ion-icon name="person-outline" id="icone_nome">
+                                <ion-icon class="mt-2" name="person-outline" id="icone_nome">
                                 </ion-icon>
                             </div>
 
@@ -40,7 +40,7 @@
                                     placeholder="Telefone"
                                     name="telefone"
                                 >
-                                <ion-icon name="call-outline" id="icone_telefone">
+                                <ion-icon class="mt-2" name="call-outline" id="icone_telefone">
                                 </ion-icon>
                             </div>
 
@@ -52,7 +52,7 @@
                                     placeholder="E-mail"
                                     name="email"
                                 >
-                                <ion-icon name="mail-outline" id="icone_email">
+                                <ion-icon class="mt-2" name="mail-outline" id="icone_email">
                                 </ion-icon>
                             </div>
 
@@ -64,7 +64,7 @@
                                     placeholder="Sua senha"
                                     name="senha"
                                 >
-                                <ion-icon name="lock-closed-outline" id="icone_senha"></ion-icon>
+                                <ion-icon class="mt-2" name="lock-closed-outline" id="icone_senha"></ion-icon>
                             </div>
 
                             <div class="form-group icone_dentro_input">
@@ -75,7 +75,7 @@
                                     placeholder="Confirme sua senha"
                                     name="confirmarsenha"
                                 >
-                                <ion-icon name="lock-closed-outline" id="icone_senha"></ion-icon>
+                                <ion-icon class="mt-2" name="lock-closed-outline" id="icone_senha"></ion-icon>
                             </div>
 
                             <button 
@@ -98,7 +98,6 @@
 
 
 <?php
-include_once('../includes/footer.php');
 $conn = mysqli_connect("localhost","root","", "barbearia_dev");
 
 
@@ -172,6 +171,7 @@ Swal.fire({
 }
 }
 
+include_once('../includes/footer.php');
 ?>
     </body>
 </html>

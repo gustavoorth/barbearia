@@ -17,7 +17,7 @@ echo '
   </symbol>
 </svg>
 
-  <div class="container">
+  <div class="container" id="footer">
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
     <div class="col-md-4 d-flex align-items-center">
       <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
@@ -40,6 +40,9 @@ echo '
 <script src="/elsalvador/js/bootstrap.min.js"></script>
 <script src="/elsalvador/js/jquery.backstretch.min.js"></script>
 <script src="/elsalvador/js/area_cliente.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="/elsalvador/js/jquery.mask.min.js"></script>
+<script src="/elsalvador/js/mask_forms.js"></script>
+
 ';
 ?>

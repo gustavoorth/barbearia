@@ -113,7 +113,9 @@ $total_price += ($product["price"]*$product["quantity"]);
     ';
     
 	}
-?>
+  
+  ?>
       </div>
     </body>
+    <?php include_once('includes/footer.php');  ?>
 </html>
