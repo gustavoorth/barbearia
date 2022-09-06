@@ -8,6 +8,7 @@
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link href="/elsalvador/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet">
         <link href="/elsalvador/css/elsalvador.css" rel="stylesheet">
         <link rel="icon" type="image/png" sizes="32x32" href="/elsalvador/images/favicon/favicon-32x32.png">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>

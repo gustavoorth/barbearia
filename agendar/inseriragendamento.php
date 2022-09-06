@@ -1,4 +1,4 @@
-    <body>
+    <body class="sb-bg-custom">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <?php
         include_once('../includes/head.php');

@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="pt-br">
   <head>
-    <title>Agendar Serviço | House of Barber</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,7 +27,6 @@
     <div id="root" class="index sb-bg-custom">
     <section class="gap-to-menu barbearia">
     <picture class="image" alt="Imagem sessao 1">
-        <source media="(max-width: 700px)" srcset="assets/images/agende-servico-mobile.jpg">
         <img 
             src="/elsalvador/assets/images/agende-servico.jpg" 
             alt="Agende seu serviço"

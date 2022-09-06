@@ -1,5 +1,5 @@
 
-<body class="sb-bg-black">
+<body class="sb-bg-custom">
     <?php
       include_once('includes/head.php');
         session_start(); 

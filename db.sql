@@ -155,8 +155,28 @@ INSERT INTO `user` (`user_id`, `nome`, `telefone`, `email`, `senha`) VALUES
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
+DROP TABLE IF EXISTS `products`;
+CREATE TABLE `products` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(250) NOT NULL,
+  `code` varchar(100) NOT NULL,
+  `price` double(9,2) NOT NULL,
+  `image` varchar(250) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `code` (`code`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+
 --
--- Dumping routines for database 'dbtcc'
+-- Dumping data for table `products`
+--
+INSERT INTO `products` (`id`, `name`, `code`, `price`, `image`) VALUES
+(1, 'Tesoura', 'tesoura01', 25.00, '/elsalvador/images/produtos/tesoura.jpg'),
+(2, 'Shampoo', 'shampoo01', 50.00, 'https://blog.beard.com.br/wp-content/uploads/2017/05/shampoo-barba-escura-6-800x800.jpg'),
+(3, 'Condicionador', 'condicionador01', 40.00, 'https://img.freepik.com/psd-gratuitas/frasco-cosmetico-de-vidro-ambar-e-maquete-de-caixa_358694-1026.jpg?size=626&ext=jpg&ga=GA1.2.838416487.1656440090'),
+(4, 'Gel', 'gel01', 15.00, 'https://img.freepik.com/psd-gratuitas/maquete-de-embalagem-de-garrafa-de-oleo-de-pele-cosmetica_439185-8325.jpg?size=626&ext=jpg&ga=GA1.2.838416487.1656440090');
+
+--
+
 --
 /*!50003 DROP PROCEDURE IF EXISTS `PROC_AGENDAMENTOS_BARBEARIA` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
